@@ -23,7 +23,8 @@ file(GLOB_RECURSE HEADERS
 	src/*.hpp
 	src/*.h
 )
-
+find_package(wxWidgets REQUIRED COMPONENTS base core net)
+include(${wxWidgets_USE_FILE})
 
 if (WIN32)
 	target_precompile_headers(${PROJECT_NAME} PUBLIC ${HEADERS})
